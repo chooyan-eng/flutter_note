@@ -27,7 +27,12 @@ class _MyAppState extends State<MyApp> {
             children: [
               const Spacer(),
               TextField(
-                onChanged: (text) {},
+                onChanged: (text) {
+                  setState(() {
+                    // 入力内容が変化するたびに呼び出される
+                    inputText = text;
+                  });
+                },
               ),
               const SizedBox(height: 32),
               ElevatedButton(
